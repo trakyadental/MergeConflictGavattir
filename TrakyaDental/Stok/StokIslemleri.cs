@@ -95,6 +95,14 @@ namespace TrakyaDental
             this.Dispose();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            stokHareket1.ID = textBox1.Text;
+        }
+        
+
+
+
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;

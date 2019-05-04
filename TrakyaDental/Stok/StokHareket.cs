@@ -12,6 +12,10 @@ namespace TrakyaDental.Stok
 {
     public partial class StokHareket : UserControl
     {
+        public string ID
+        {
+            set { tbMiktar.Text = value; }
+        }
         public StokHareket()
         {
             InitializeComponent();

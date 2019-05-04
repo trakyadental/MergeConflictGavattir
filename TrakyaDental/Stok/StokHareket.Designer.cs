@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbUrunID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeIcon)).BeginInit();
             this.SuspendLayout();
@@ -51,9 +52,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 16);
+            this.label1.Size = new System.Drawing.Size(123, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ÜRÜN DETAY";
+            this.label1.Text = "STOK HAREKET";
             // 
             // panel1
             // 
@@ -90,7 +91,7 @@
             // tbMiktar
             // 
             this.tbMiktar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tbMiktar.Location = new System.Drawing.Point(126, 117);
+            this.tbMiktar.Location = new System.Drawing.Point(126, 115);
             this.tbMiktar.Name = "tbMiktar";
             this.tbMiktar.Size = new System.Drawing.Size(104, 22);
             this.tbMiktar.TabIndex = 24;
@@ -99,7 +100,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(59, 120);
+            this.label5.Location = new System.Drawing.Point(59, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 23;
@@ -119,7 +120,7 @@
             // tbUcret
             // 
             this.tbUcret.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tbUcret.Location = new System.Drawing.Point(126, 148);
+            this.tbUcret.Location = new System.Drawing.Point(126, 146);
             this.tbUcret.Name = "tbUcret";
             this.tbUcret.Size = new System.Drawing.Size(104, 22);
             this.tbUcret.TabIndex = 27;
@@ -128,7 +129,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(62, 151);
+            this.label2.Location = new System.Drawing.Point(62, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 26;
@@ -152,10 +153,23 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "ÜRÜN:";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(76)))), ((int)(((byte)(157)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(126, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "TAMAM";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // StokHareket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tbUrunID);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbUcret);
@@ -166,7 +180,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Name = "StokHareket";
-            this.Size = new System.Drawing.Size(239, 183);
+            this.Size = new System.Drawing.Size(239, 207);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeIcon)).EndInit();
@@ -188,5 +202,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbUrunID;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

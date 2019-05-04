@@ -145,6 +145,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 27);
             this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "5500";
             // 
             // label4
             // 
@@ -234,6 +235,7 @@
             this.label1.Size = new System.Drawing.Size(36, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "ARA";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pbAra
             // 
@@ -322,6 +324,25 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+<<<<<<< HEAD
+=======
+            // stokHareket1
+            // 
+            this.stokHareket1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stokHareket1.Location = new System.Drawing.Point(313, 218);
+            this.stokHareket1.Name = "stokHareket1";
+            this.stokHareket1.Size = new System.Drawing.Size(241, 202);
+            this.stokHareket1.TabIndex = 14;
+            // 
+            // urunDetay1
+            // 
+            this.urunDetay1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.urunDetay1.Location = new System.Drawing.Point(130, 95);
+            this.urunDetay1.Name = "urunDetay1";
+            this.urunDetay1.Size = new System.Drawing.Size(640, 400);
+            this.urunDetay1.TabIndex = 13;
+            // 
+>>>>>>> 8371b9a3dfc63a4cf514ef4fb438370aaada94af
             // StokIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
