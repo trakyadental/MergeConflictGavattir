@@ -269,7 +269,7 @@
             this.stokHareket1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.stokHareket1.Location = new System.Drawing.Point(313, 218);
             this.stokHareket1.Name = "stokHareket1";
-            this.stokHareket1.Size = new System.Drawing.Size(241, 173);
+            this.stokHareket1.Size = new System.Drawing.Size(241, 202);
             this.stokHareket1.TabIndex = 14;
             // 
             // urunDetay1
@@ -282,10 +282,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 52);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(876, 494);
             this.dataGridView1.TabIndex = 12;
             // 
@@ -324,25 +328,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-<<<<<<< HEAD
-=======
-            // stokHareket1
-            // 
-            this.stokHareket1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.stokHareket1.Location = new System.Drawing.Point(313, 218);
-            this.stokHareket1.Name = "stokHareket1";
-            this.stokHareket1.Size = new System.Drawing.Size(241, 202);
-            this.stokHareket1.TabIndex = 14;
-            // 
-            // urunDetay1
-            // 
-            this.urunDetay1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.urunDetay1.Location = new System.Drawing.Point(130, 95);
-            this.urunDetay1.Name = "urunDetay1";
-            this.urunDetay1.Size = new System.Drawing.Size(640, 400);
-            this.urunDetay1.TabIndex = 13;
-            // 
->>>>>>> 8371b9a3dfc63a4cf514ef4fb438370aaada94af
             // StokIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

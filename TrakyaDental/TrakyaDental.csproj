@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dentalDataSet.cs">
+      <DependentUpon>dentalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dentalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dentalDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Hasta\RandevularFORM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +181,11 @@
     <Compile Include="Sınıflar\Recete.cs" />
     <Compile Include="Sınıflar\Stok.cs" />
     <Compile Include="Sınıflar\UrunGrup.cs" />
+    <Compile Include="TrakyaDentalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrakyaDentalDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Hasta\RandevularFORM.resx">
       <DependentUpon>RandevularFORM.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +253,17 @@
     <EmbeddedResource Include="Stok\UrunDetay.resx">
       <DependentUpon>UrunDetay.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dentalDataSet.xsc">
+      <DependentUpon>dentalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dentalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dentalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dentalDataSet.xss">
+      <DependentUpon>dentalDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -249,6 +273,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TrakyaDentalDataSet.xsc">
+      <DependentUpon>TrakyaDentalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TrakyaDentalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TrakyaDentalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrakyaDentalDataSet.xss">
+      <DependentUpon>TrakyaDentalDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
