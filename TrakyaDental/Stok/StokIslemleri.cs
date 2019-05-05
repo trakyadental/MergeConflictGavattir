@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TrakyaDental
 {
@@ -70,16 +71,80 @@ namespace TrakyaDental
             this.Dispose();
         }
 
+        private string[] veritabaniDetayCek(string connectionString, string columnName, string from,string whereCol, string whereDat)
+        {
+            //DataTable stokBilgileri = new DataTable();
+            string[] sonuc = new string[20];
+            int counter = 0;
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+
+            using (SqlConnection con = new SqlConnection(connStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select "+columnName+" from "+ from + " where " + whereCol + "=" + whereDat, con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            sonuc[counter] = reader.GetString(counter++);
+                        }
+                    }
+                }
+            }
+            return sonuc;
+        }
+
         private void pbDetay_Click(object sender, EventArgs e)
         {
+            try
+            {
+                urunDetay1.urunID = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
+                urunDetay1.marka = dataGridView1.SelectedCells[1].Value.ToString();
+                urunDetay1.urunGrubu = dataGridView1.SelectedCells[2].Value.ToString();
+                int grup = Convert.ToInt32(dataGridView1.SelectedCells[2].Value.ToString());
+                urunDetay1.urunAd = dataGridView1.SelectedCells[3].Value.ToString();
+                urunDetay1.stokMikter = Convert.ToInt32(dataGridView1.SelectedCells[4].Value.ToString());
+                urunDetay1.birimFiyat = Convert.ToInt32(dataGridView1.SelectedCells[5].Value.ToString());
+            
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";            
+            urunDetay1.aciklama = veritabaniDetayCek(connStr, "Grup_Aciklama", "UrunGrup", "GrupID", grup.ToString())[0];            
             urunDetay1.Update();
             urunDetay1.Show();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message);
+            }
         }
 
         private void StokIslemleri_Load(object sender, EventArgs e)
         {
             urunDetay1.Hide();
             stokHareket1.Hide();
+            //Connec
+            dataGridView1.DataSource = stokGetir();
+        }
+
+        private DataTable stokGetir()
+        {
+            DataTable stokBilgileri = new DataTable();
+
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;" ;
+
+            using(SqlConnection con = new SqlConnection(connStr))
+            {
+                using(SqlCommand cmd = new SqlCommand("Select * from Stok", con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    stokBilgileri.Load(reader);
+                }
+            }
+
+
+            return stokBilgileri;
         }
 
         private void pbStokHareketi_Click(object sender, EventArgs e)
