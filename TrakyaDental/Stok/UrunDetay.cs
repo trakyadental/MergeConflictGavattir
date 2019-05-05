@@ -27,6 +27,10 @@ namespace TrakyaDental.Stok
         {
             set { textBox4.Text = value.ToString(); }
         }
+        public string birim
+        {
+            set { textBox7.Text = value; }
+        }
         public int birimFiyat
         {
             set { textBox5.Text = value.ToString(); }
@@ -56,6 +60,11 @@ namespace TrakyaDental.Stok
         private void closeIcon_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
