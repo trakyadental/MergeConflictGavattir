@@ -76,7 +76,7 @@ namespace TrakyaDental
             //DataTable stokBilgileri = new DataTable();
             string[] sonuc = new string[20];
             int counter = 0;
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
 
             using (SqlConnection con = new SqlConnection(connStr))
             {
@@ -108,7 +108,7 @@ namespace TrakyaDental
                 urunDetay1.stokMikter = Convert.ToInt32(dataGridView1.SelectedCells[4].Value.ToString());
                 urunDetay1.birimFiyat = Convert.ToInt32(dataGridView1.SelectedCells[5].Value.ToString());
             
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";            
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";            
             urunDetay1.aciklama = veritabaniDetayCek(connStr, "Grup_Aciklama", "UrunGrup", "GrupID", grup.ToString())[0];            
             urunDetay1.Update();
             urunDetay1.Show();
@@ -131,7 +131,7 @@ namespace TrakyaDental
         {
             DataTable stokBilgileri = new DataTable();
 
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;" ;
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
 
             using(SqlConnection con = new SqlConnection(connStr))
             {

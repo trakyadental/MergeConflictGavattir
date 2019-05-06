@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TrakyaDental
 {
@@ -15,6 +16,12 @@ namespace TrakyaDental
         public DoktorOdemeleri()
         {
             InitializeComponent();
+        }
+        public string conString = "";
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

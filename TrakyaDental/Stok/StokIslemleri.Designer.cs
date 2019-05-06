@@ -328,8 +328,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-<<<<<<< HEAD
-
             // stokHareket1
             // 
             this.stokHareket1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -346,8 +344,6 @@
             this.urunDetay1.Size = new System.Drawing.Size(640, 400);
             this.urunDetay1.TabIndex = 13;
             // 
-=======
->>>>>>> 2bba7415be6c1d636e2f3f581b2c9a928c74d9fa
             // StokIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
