@@ -44,7 +44,7 @@ namespace TrakyaDental.Stok
                 // belirteceğiz.
                 try
                 {
-                    string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+                    string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
                     int mevcutMiktar = 0;
                     SqlConnection con = new SqlConnection(connStr);
                     con.Open();
@@ -60,10 +60,15 @@ namespace TrakyaDental.Stok
                         + " where UrunID = " 
                         + Convert.ToInt32(tbUrunID.Text), con);
                     SqlCommand girdiIslemEkle = new SqlCommand("Insert into Islem(PersonelID,IslemTipiID) values(@PersonelID,@IslemTipiID)",con); // Yeni bir işlem olarak kaydediyoruz.
-
                     girdiIslemEkle.Parameters.AddWithValue("@PersonelID", comboboxPersonel.SelectedItem.ToString()[0]);
-                    girdiIslemEkle.Parameters.AddWithValue("@IslemTipiID", (comboBox1.SelectedIndex + 1));                        
-                        
+                    girdiIslemEkle.Parameters.AddWithValue("@IslemTipiID", (comboBox1.SelectedIndex + 1));
+
+                    SqlCommand insertIntoIslemler = new SqlCommand("Insert into Islem(IslemTipiID,PersonelID,Bakiye) Values(@IslemTipiID,@PersonelID,@Bakiye)",con);
+                    insertIntoIslemler.Parameters.AddWithValue("@IslemTipiID", comboBox1.SelectedIndex + 1);
+                    insertIntoIslemler.Parameters.AddWithValue("@PersonelID",comboboxPersonel.SelectedItem.ToString()[0]);
+                    insertIntoIslemler.Parameters.AddWithValue("Bakiye", (Convert.ToInt32(tbMiktar.Text) * Convert.ToInt32(tbUcret.Text)));
+
+                    insertIntoIslemler.ExecuteNonQuery();
                     cmdStokGuncelle.ExecuteNonQuery();
                     girdiIslemEkle.ExecuteNonQuery();
                     con.Close();

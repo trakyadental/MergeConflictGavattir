@@ -87,30 +87,24 @@ namespace TrakyaDental
         {
             try
             {
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
+
                 urunDetay1.urunID = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
                 urunDetay1.marka = dataGridView1.SelectedCells[1].Value.ToString();
                 urunDetay1.urunGrubu = dataGridView1.SelectedCells[2].Value.ToString();
                 int grup = Convert.ToInt32(dataGridView1.SelectedCells[2].Value.ToString());
                 urunDetay1.urunAd = dataGridView1.SelectedCells[3].Value.ToString();
                 urunDetay1.stokMikter = Convert.ToInt32(dataGridView1.SelectedCells[4].Value.ToString());
-<<<<<<< HEAD
-                urunDetay1.birimFiyat = Convert.ToInt32(dataGridView1.SelectedCells[5].Value.ToString());
-            
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";            
-            urunDetay1.aciklama = veritabaniDetayCek(connStr, "Grup_Aciklama", "UrunGrup", "GrupID", grup.ToString())[0];            
-            urunDetay1.Update();
-            urunDetay1.Show();
-=======
+                urunDetay1.aciklama = veritabaniDetayCek(connStr, "Grup_Aciklama", "UrunGrup", "GrupID", grup.ToString())[0];
+                urunDetay1.Show();
                 urunDetay1.birim = dataGridView1.SelectedCells[5].Value.ToString();
                 urunDetay1.birimFiyat = Convert.ToInt32(dataGridView1.SelectedCells[6].Value.ToString());
                 urunDetay1.skt = Convert.ToDateTime(dataGridView1.SelectedCells[7].Value);
                 urunDetay1.barkod = dataGridView1.SelectedCells[8].Value.ToString();
 
-                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
                 urunDetay1.aciklama = veritabaniDetayCek(connStr, "Grup_Aciklama", "UrunGrup", "GrupID", grup.ToString())[0];
                 urunDetay1.Update();
                 urunDetay1.Show();
->>>>>>> 1fb0f5a25c02942f87dfd25794e389ce4eaff142
             }
             catch (Exception hata)
             {
@@ -131,11 +125,9 @@ namespace TrakyaDental
         {
             DataTable stokBilgileri = new DataTable();
 
-<<<<<<< HEAD
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
-=======
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
->>>>>>> 1fb0f5a25c02942f87dfd25794e389ce4eaff142
+
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123";
+
 
             using (SqlConnection con = new SqlConnection(connStr))
             {
@@ -148,30 +140,36 @@ namespace TrakyaDental
             }
             return stokBilgileri;
         }
-
         private void pbStokHareketi_Click(object sender, EventArgs e)
         {
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
-
-            stokHareket1.ID = dataGridView1.SelectedCells[0].Value.ToString();
-            ComboBox personel = new ComboBox();
-            using (SqlConnection con = new SqlConnection(connStr))
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("Select * from Personel", con))
-                {
-                    con.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
 
-                    while (reader.Read())
+                stokHareket1.ID = dataGridView1.SelectedCells[0].Value.ToString();
+                ComboBox personel = new ComboBox();
+                using (SqlConnection connect = new SqlConnection(connStr))
+                {
+                    using (SqlCommand command = new SqlCommand("Select * from Personel", connect))
                     {
-                        //sonuc[counter] = reader.GetString(counter++);
-                        personel.Items.Add(reader["PersonelID"].ToString() + " - " + reader["PersonelAd"]);
+                        connect.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            //sonuc[counter] = reader.GetString(counter++);
+                            personel.Items.Add(reader["PersonelID"].ToString() + " - " + reader["PersonelAd"]);
+                        }
+                        connect.Close();
+                        reader.Close();
                     }
-                    con.Close();
-                    reader.Close();
+                    stokHareket1.personelCB = personel;
+                    stokHareket1.Show();
                 }
-                stokHareket1.personelCB = personel;
-                stokHareket1.Show();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message);
             }
         }
 
@@ -192,11 +190,11 @@ namespace TrakyaDental
         {
             try
             {
-                //string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+                //string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
 
                 ComboBox urunG = new ComboBox();
                 ComboBox markalar = new ComboBox();
-                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
 
                 using (SqlConnection con = new SqlConnection(connStr))
                 {
@@ -241,7 +239,7 @@ namespace TrakyaDental
 
         private void pbAra_Click(object sender, EventArgs e)
         {
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
             int counter = 0;
             using (SqlConnection con = new SqlConnection(connStr))
             {
@@ -278,7 +276,7 @@ namespace TrakyaDental
         {
             try
             {
-                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
 
                 SqlConnection con = new SqlConnection(connStr);
                 con.Open();

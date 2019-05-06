@@ -363,8 +363,7 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-<<<<<<< HEAD
-=======
+
             // urunEkle1
             // 
             this.urunEkle1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -374,7 +373,6 @@
             this.urunEkle1.TabIndex = 12;
             this.urunEkle1.Load += new System.EventHandler(this.urunEkle1_Load);
             // 
->>>>>>> 1fb0f5a25c02942f87dfd25794e389ce4eaff142
             // stokHareket1
             // 
             this.stokHareket1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
