@@ -9,9 +9,9 @@ namespace TrakyaDental.Sınıflar
     class Stok
     {
         int UrunID, Marka, Urun_Grubu, Miktar, BirimFiyat;
-        string Urun_Ad, Aciklama, Birim;
+        string Urun_Ad, Birim;
 
-        public Stok(int urunID, int marka, int urun_Grubu, int miktar, int birimFiyat, string urun_Ad, string aciklama, string birim)
+        public Stok(int urunID, int marka, int urun_Grubu, int miktar, int birimFiyat, string urun_Ad, string birim)
         {
             UrunID = urunID;
             Marka = marka;
@@ -19,7 +19,6 @@ namespace TrakyaDental.Sınıflar
             Miktar = miktar;
             BirimFiyat = birimFiyat;
             Urun_Ad = urun_Ad;
-            Aciklama = aciklama;
             Birim = birim;
         }
 
@@ -29,7 +28,6 @@ namespace TrakyaDental.Sınıflar
         public int Miktar1 { get => Miktar; set => Miktar = value; }
         public int BirimFiyat1 { get => BirimFiyat; set => BirimFiyat = value; }
         public string Urun_Ad1 { get => Urun_Ad; set => Urun_Ad = value; }
-        public string Aciklama1 { get => Aciklama; set => Aciklama = value; }
         public string Birim1 { get => Birim; set => Birim = value; }
     }
 }

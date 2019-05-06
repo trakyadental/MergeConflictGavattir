@@ -164,6 +164,12 @@
     <Compile Include="Stok\StokHareket.Designer.cs">
       <DependentUpon>StokHareket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stok\UrunEkle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stok\UrunEkle.Designer.cs">
+      <DependentUpon>UrunEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\UrunDetay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     <EmbeddedResource Include="Stok\StokHareket.resx">
       <DependentUpon>StokHareket.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Stok\UrunEkle.resx">
+      <DependentUpon>UrunEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stok\UrunDetay.resx">
       <DependentUpon>UrunDetay.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +302,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rightArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plusNew.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

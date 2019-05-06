@@ -44,11 +44,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbPersonelBilgileri = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pbBackToMainScreen = new System.Windows.Forms.PictureBox();
             this.personelBilgileri1 = new TrakyaDental.PersonelBilgileri();
             this.smSveEmailIslemleri1 = new TrakyaDental.SMSveEmailIslemleri();
             this.randevuDefteri1 = new TrakyaDental.RandevuDefteri();
-            this.pbBackToMainScreen = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.labelPlus = new System.Windows.Forms.Label();
+            this.pbPlus = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSMSveEmail)).BeginInit();
@@ -56,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonelBilgileri)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackToMainScreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlus)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -223,6 +226,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.labelPlus);
+            this.panel3.Controls.Add(this.pbPlus);
             this.panel3.Controls.Add(this.pbBackToMainScreen);
             this.panel3.Controls.Add(this.personelBilgileri1);
             this.panel3.Controls.Add(this.smSveEmailIslemleri1);
@@ -233,14 +238,16 @@
             this.panel3.Size = new System.Drawing.Size(889, 599);
             this.panel3.TabIndex = 2;
             // 
-            // panel4
+            // pbBackToMainScreen
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(229, 46);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 599);
-            this.panel4.TabIndex = 3;
+            this.pbBackToMainScreen.Image = global::TrakyaDental.Properties.Resources.goBack_2x;
+            this.pbBackToMainScreen.Location = new System.Drawing.Point(4, 0);
+            this.pbBackToMainScreen.Name = "pbBackToMainScreen";
+            this.pbBackToMainScreen.Size = new System.Drawing.Size(48, 38);
+            this.pbBackToMainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBackToMainScreen.TabIndex = 4;
+            this.pbBackToMainScreen.TabStop = false;
+            this.pbBackToMainScreen.Click += new System.EventHandler(this.pbBackToMainScreen_Click);
             // 
             // personelBilgileri1
             // 
@@ -263,16 +270,34 @@
             this.randevuDefteri1.Size = new System.Drawing.Size(883, 578);
             this.randevuDefteri1.TabIndex = 0;
             // 
-            // pbBackToMainScreen
+            // panel4
             // 
-            this.pbBackToMainScreen.Image = global::TrakyaDental.Properties.Resources.goBack_2x;
-            this.pbBackToMainScreen.Location = new System.Drawing.Point(4, 0);
-            this.pbBackToMainScreen.Name = "pbBackToMainScreen";
-            this.pbBackToMainScreen.Size = new System.Drawing.Size(48, 38);
-            this.pbBackToMainScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBackToMainScreen.TabIndex = 4;
-            this.pbBackToMainScreen.TabStop = false;
-            this.pbBackToMainScreen.Click += new System.EventHandler(this.pbBackToMainScreen_Click);
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(229, 46);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 599);
+            this.panel4.TabIndex = 3;
+            // 
+            // labelPlus
+            // 
+            this.labelPlus.AutoSize = true;
+            this.labelPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelPlus.Location = new System.Drawing.Point(740, 18);
+            this.labelPlus.Name = "labelPlus";
+            this.labelPlus.Size = new System.Drawing.Size(146, 24);
+            this.labelPlus.TabIndex = 19;
+            this.labelPlus.Text = "YENİ OLUŞTUR";
+            // 
+            // pbPlus
+            // 
+            this.pbPlus.Image = global::TrakyaDental.Properties.Resources.plusNew;
+            this.pbPlus.Location = new System.Drawing.Point(711, 15);
+            this.pbPlus.Name = "pbPlus";
+            this.pbPlus.Size = new System.Drawing.Size(26, 31);
+            this.pbPlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPlus.TabIndex = 18;
+            this.pbPlus.TabStop = false;
             // 
             // KlinikIslemleri
             // 
@@ -299,7 +324,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRandevuDefteri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonelBilgileri)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackToMainScreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,6 +352,8 @@
         private PersonelBilgileri personelBilgileri1;
         private System.Windows.Forms.Button blue;
         private System.Windows.Forms.PictureBox pbBackToMainScreen;
+        private System.Windows.Forms.Label labelPlus;
+        private System.Windows.Forms.PictureBox pbPlus;
     }
 }
 

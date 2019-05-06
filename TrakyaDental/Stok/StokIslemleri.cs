@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 
 namespace TrakyaDental
 {
+
     public partial class StokIslemleri : Form
     {
 
@@ -20,8 +21,7 @@ namespace TrakyaDental
         public StokIslemleri()
         {
             InitializeComponent();
-        }
-
+        }       
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
@@ -32,12 +32,13 @@ namespace TrakyaDental
         {
             ActiveForm.Dispose();
         }
-        
+
+        // Bu kısım panelin taşınabilmesi için gerekli.
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
             {
-                mouseX = MousePosition.X -lastLocation.X;
+                mouseX = MousePosition.X - lastLocation.X;
                 mouseY = MousePosition.Y - lastLocation.Y;
 
                 this.SetDesktopLocation(mouseX, mouseY);
@@ -49,29 +50,15 @@ namespace TrakyaDental
             mouseDown = false;
         }
 
-        private void pbHastaIslemleri_Click(object sender, EventArgs e)
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            var hastaIslemForm = new HastaIslemleri();
-            hastaIslemForm.ShowDialog();
+            mouseDown = true;
+            lastLocation = e.Location;
         }
+        // !-- Buraya Kadar --!//
 
-        private void pbMaliIslemler_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var maliIslemForm = new MaliIslemleri();
-            maliIslemForm.ShowDialog();
-            this.Dispose();
-        }
-
-        private void pbKlinikIslemleri_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var klinikForm = new KlinikIslemleri();
-            klinikForm.ShowDialog();
-            this.Dispose();
-        }
-
-        private string[] veritabaniDetayCek(string connectionString, string columnName, string from,string whereCol, string whereDat)
+        // Veritabanından Select sorgularını -string dizisi döndürecek biçimde- daha kolay yazabilmek adına yazılan fonksiyonumuz.
+        private string[] veritabaniDetayCek(string connectionString, string columnName, string from, string whereCol, string whereDat)
         {
             //DataTable stokBilgileri = new DataTable();
             string[] sonuc = new string[20];
@@ -80,7 +67,7 @@ namespace TrakyaDental
 
             using (SqlConnection con = new SqlConnection(connStr))
             {
-                using (SqlCommand cmd = new SqlCommand("Select "+columnName+" from "+ from + " where " + whereCol + "=" + whereDat, con))
+                using (SqlCommand cmd = new SqlCommand("Select " + columnName + " from " + from + " where " + whereCol + "=" + whereDat, con))
                 {
                     con.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -106,12 +93,24 @@ namespace TrakyaDental
                 int grup = Convert.ToInt32(dataGridView1.SelectedCells[2].Value.ToString());
                 urunDetay1.urunAd = dataGridView1.SelectedCells[3].Value.ToString();
                 urunDetay1.stokMikter = Convert.ToInt32(dataGridView1.SelectedCells[4].Value.ToString());
+<<<<<<< HEAD
                 urunDetay1.birimFiyat = Convert.ToInt32(dataGridView1.SelectedCells[5].Value.ToString());
             
             string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";            
             urunDetay1.aciklama = veritabaniDetayCek(connStr, "Grup_Aciklama", "UrunGrup", "GrupID", grup.ToString())[0];            
             urunDetay1.Update();
             urunDetay1.Show();
+=======
+                urunDetay1.birim = dataGridView1.SelectedCells[5].Value.ToString();
+                urunDetay1.birimFiyat = Convert.ToInt32(dataGridView1.SelectedCells[6].Value.ToString());
+                urunDetay1.skt = Convert.ToDateTime(dataGridView1.SelectedCells[7].Value);
+                urunDetay1.barkod = dataGridView1.SelectedCells[8].Value.ToString();
+
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+                urunDetay1.aciklama = veritabaniDetayCek(connStr, "Grup_Aciklama", "UrunGrup", "GrupID", grup.ToString())[0];
+                urunDetay1.Update();
+                urunDetay1.Show();
+>>>>>>> 1fb0f5a25c02942f87dfd25794e389ce4eaff142
             }
             catch (Exception hata)
             {
@@ -123,6 +122,7 @@ namespace TrakyaDental
         {
             urunDetay1.Hide();
             stokHareket1.Hide();
+            urunEkle1.Hide();
             //Connec
             dataGridView1.DataSource = stokGetir();
         }
@@ -131,25 +131,48 @@ namespace TrakyaDental
         {
             DataTable stokBilgileri = new DataTable();
 
+<<<<<<< HEAD
             string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
+=======
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+>>>>>>> 1fb0f5a25c02942f87dfd25794e389ce4eaff142
 
-            using(SqlConnection con = new SqlConnection(connStr))
+            using (SqlConnection con = new SqlConnection(connStr))
             {
-                using(SqlCommand cmd = new SqlCommand("Select * from Stok", con))
+                using (SqlCommand cmd = new SqlCommand("Select * from Stok", con))
                 {
                     con.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
                     stokBilgileri.Load(reader);
                 }
             }
-
-
             return stokBilgileri;
         }
 
         private void pbStokHareketi_Click(object sender, EventArgs e)
         {
-            stokHareket1.Show();
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+
+            stokHareket1.ID = dataGridView1.SelectedCells[0].Value.ToString();
+            ComboBox personel = new ComboBox();
+            using (SqlConnection con = new SqlConnection(connStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select * from Personel", con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //sonuc[counter] = reader.GetString(counter++);
+                        personel.Items.Add(reader["PersonelID"].ToString() + " - " + reader["PersonelAd"]);
+                    }
+                    con.Close();
+                    reader.Close();
+                }
+                stokHareket1.personelCB = personel;
+                stokHareket1.Show();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -162,16 +185,124 @@ namespace TrakyaDental
 
         private void label1_Click(object sender, EventArgs e)
         {
-            stokHareket1.ID = textBox1.Text;
+            stokHareket1.ID = tbUrunAra.Text;
         }
-        
 
-
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void pbUrunEkle_Click(object sender, EventArgs e)
         {
-            mouseDown = true;
-            lastLocation = e.Location;
+            try
+            {
+                //string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+
+                ComboBox urunG = new ComboBox();
+                ComboBox markalar = new ComboBox();
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+
+                using (SqlConnection con = new SqlConnection(connStr))
+                {
+                    using (SqlCommand cmd = new SqlCommand("Select * from UrunGrup", con))
+                    {
+                        con.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        var number = reader.HasRows;
+
+                        while (reader.Read())
+                        {
+                            //sonuc[counter] = reader.GetString(counter++);
+                            urunG.Items.Add(reader["GrupID"].ToString() + " - " + reader["Grup_Aciklama"]);
+                        }
+                        con.Close();
+                        reader.Close();
+                    }
+                    using (SqlCommand cmd = new SqlCommand("Select * from Markalar", con))
+                    {
+                        con.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            //sonuc[counter] = reader.GetString(counter++);
+                            markalar.Items.Add(reader["MarkaID"].ToString() + " - " + reader["MarkaAd"]);
+                        }
+                        con.Close();
+                        reader.Close();
+                    }
+                }
+                urunEkle1.markalarCB = markalar;
+                urunEkle1.urunGrupCB = urunG;
+                urunEkle1.Show();
+
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message);
+            }
         }
+
+        private void pbAra_Click(object sender, EventArgs e)
+        {
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+            int counter = 0;
+            using (SqlConnection con = new SqlConnection(connStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select * from Stok", con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //sonuc[counter] = reader.GetString(counter++);
+                        if(reader.GetString(reader.GetOrdinal("Urun_Ad")) == tbUrunAra.Text)
+                        {
+                            dataGridView1.Rows[counter].Selected = true;
+                        }
+                        else
+                        {
+                            counter++;
+                        }
+                    }
+                    con.Close();
+                    reader.Close();
+                }
+            }
+            MessageBox.Show("Arama Ekranı Burada Çıkacak.");
+        }
+
+        private void urunEkle1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+
+                SqlConnection con = new SqlConnection(connStr);
+                con.Open();
+                string deneme = dataGridView1.SelectedCells[0].Value.ToString();
+                SqlCommand cmd = new SqlCommand("Delete from Stok where UrunID = "+ deneme, con);               
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message);
+            }
+            finally
+            {
+                MessageBox.Show("Ürün Stoklardan Başarıyla Silindi.");
+                dataGridView1.DataSource = stokGetir();            
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = stokGetir();
+        }
+
+        
     }
 }

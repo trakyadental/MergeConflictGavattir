@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pbPlus = new System.Windows.Forms.PictureBox();
+            this.labelPlus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlus)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -42,20 +45,46 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // pbPlus
+            // 
+            this.pbPlus.Image = global::TrakyaDental.Properties.Resources.plusNew;
+            this.pbPlus.Location = new System.Drawing.Point(699, 6);
+            this.pbPlus.Name = "pbPlus";
+            this.pbPlus.Size = new System.Drawing.Size(26, 31);
+            this.pbPlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPlus.TabIndex = 11;
+            this.pbPlus.TabStop = false;
+            // 
+            // labelPlus
+            // 
+            this.labelPlus.AutoSize = true;
+            this.labelPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelPlus.Location = new System.Drawing.Point(728, 9);
+            this.labelPlus.Name = "labelPlus";
+            this.labelPlus.Size = new System.Drawing.Size(146, 24);
+            this.labelPlus.TabIndex = 12;
+            this.labelPlus.Text = "YENİ OLUŞTUR";
+            // 
             // DoktorOdemeleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelPlus);
+            this.Controls.Add(this.pbPlus);
             this.Controls.Add(this.dataGridView1);
             this.Name = "DoktorOdemeleri";
             this.Size = new System.Drawing.Size(899, 599);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlus)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pbPlus;
+        private System.Windows.Forms.Label labelPlus;
     }
 }
