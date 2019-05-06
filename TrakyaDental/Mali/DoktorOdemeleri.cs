@@ -30,11 +30,14 @@ namespace TrakyaDental
             int counter = 0;
             string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123";
             int[] doktorlar = new int[5];
+
             SqlConnection connect = new SqlConnection(connStr);
             connect.Open();
+
             SqlCommand commandPersonel = new SqlCommand("Select PersonelID from Personel where Unvan=@Unvan", connect); // Öncelikle Doktor olan personelin ID'si çekiliyor
-            SqlCommand cmdIslemCek = new SqlCommand("Select * from Islem", connect); // Sonrasında yapılan işlemler arasından doktor olanların işlemleri çekiliyor
             commandPersonel.Parameters.AddWithValue("@Unvan", "DOKTOR");
+            SqlCommand cmdIslemCek = new SqlCommand("Select * from Islem", connect); // Sonrasında yapılan işlemler arasından doktor olanların işlemleri çekiliyor
+            
 
             SqlDataReader reader = commandPersonel.ExecuteReader();
             while (reader.Read())
@@ -50,7 +53,6 @@ namespace TrakyaDental
                 {
                     if (Convert.ToInt32(doktorIslemOkuyucu[doktorIslemOkuyucu.GetOrdinal("PersonelID")]) == personel) // Bu kısımda doktor olan tüm personelin
                     {                                                                                                 // verileri DataGridView'a atılıyor.
-                        int pers = Convert.ToInt32(doktorIslemOkuyucu[doktorIslemOkuyucu.GetOrdinal("PersonelID")]);
                         string islemID = doktorIslemOkuyucu["IslemID"].ToString();
                         string personelID = doktorIslemOkuyucu["PersonelID"].ToString();
                         string islemTipiID = doktorIslemOkuyucu["IslemTipiID"].ToString();
