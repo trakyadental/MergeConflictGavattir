@@ -56,7 +56,9 @@ namespace TrakyaDental.Stok
 
         private void veriEkle(string connectionString, string tableName)
         {
-            SqlConnection con = new SqlConnection(connStr);
+            try
+            {
+                SqlConnection con = new SqlConnection(connStr);
             con.Open();
             SqlCommand cmd = new SqlCommand("Insert into " + tableName + "(Marka,Urun_Grubu,Urun_Ad,Miktar,Birim,BirimFiyat,SKT,Barkod)" + " values(@UrunMarka,@UrunGrup,@Ad,@Miktar,@Birim,@BirimFiyat,@SKT,@Barkod)", con);
             cmd.Parameters.AddWithValue("@UrunMarka", comboboxUrunMarka.SelectedItem.ToString()[0]);
@@ -67,9 +69,8 @@ namespace TrakyaDental.Stok
             cmd.Parameters.AddWithValue("@BirimFiyat", tbBirimFiyat.Text);
             cmd.Parameters.AddWithValue("@SKT", dateSKT.Value);
             cmd.Parameters.AddWithValue("@Barkod", tbBarkod.Text);
-            try
-            {
-                cmd.ExecuteNonQuery();
+
+            cmd.ExecuteNonQuery();
             }catch(Exception hata)
             {
                 MessageBox.Show(hata.Message);

@@ -209,6 +209,11 @@ namespace TrakyaDental
             MessageBox.Show("Arama Ekranı Burada Çıkacak.");
         }
 
+        private void urunEkle1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = stokGetir();
