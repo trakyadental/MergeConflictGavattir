@@ -33,6 +33,7 @@ namespace TrakyaDental
             ActiveForm.Dispose();
         }
 
+        // Bu kısım panelin taşınabilmesi için gerekli.
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
@@ -54,7 +55,9 @@ namespace TrakyaDental
             mouseDown = true;
             lastLocation = e.Location;
         }
+        // !-- Buraya Kadar --!//
 
+        // Veritabanından Select sorgularını -string dizisi döndürecek biçimde- daha kolay yazabilmek adına yazılan fonksiyonumuz.
         private string[] veritabaniDetayCek(string connectionString, string columnName, string from, string whereCol, string whereDat)
         {
             //DataTable stokBilgileri = new DataTable();
@@ -130,14 +133,33 @@ namespace TrakyaDental
                     stokBilgileri.Load(reader);
                 }
             }
-
-
             return stokBilgileri;
         }
 
         private void pbStokHareketi_Click(object sender, EventArgs e)
         {
-            stokHareket1.Show();
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+
+            stokHareket1.ID = dataGridView1.SelectedCells[0].Value.ToString();
+            ComboBox personel = new ComboBox();
+            using (SqlConnection con = new SqlConnection(connStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select * from Personel", con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //sonuc[counter] = reader.GetString(counter++);
+                        personel.Items.Add(reader["PersonelID"].ToString() + " - " + reader["PersonelAd"]);
+                    }
+                    con.Close();
+                    reader.Close();
+                }
+                stokHareket1.personelCB = personel;
+                stokHareket1.Show();
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -150,7 +172,7 @@ namespace TrakyaDental
 
         private void label1_Click(object sender, EventArgs e)
         {
-            stokHareket1.ID = textBox1.Text;
+            stokHareket1.ID = tbUrunAra.Text;
         }
 
         private void pbUrunEkle_Click(object sender, EventArgs e)
@@ -206,12 +228,61 @@ namespace TrakyaDental
 
         private void pbAra_Click(object sender, EventArgs e)
         {
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+            int counter = 0;
+            using (SqlConnection con = new SqlConnection(connStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select * from Stok", con))
+                {
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //sonuc[counter] = reader.GetString(counter++);
+                        if(reader.GetString(reader.GetOrdinal("Urun_Ad")) == tbUrunAra.Text)
+                        {
+                            dataGridView1.Rows[counter].Selected = true;
+                        }
+                        else
+                        {
+                            counter++;
+                        }
+                    }
+                    con.Close();
+                    reader.Close();
+                }
+            }
             MessageBox.Show("Arama Ekranı Burada Çıkacak.");
         }
 
         private void urunEkle1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+
+                SqlConnection con = new SqlConnection(connStr);
+                con.Open();
+                string deneme = dataGridView1.SelectedCells[0].Value.ToString();
+                SqlCommand cmd = new SqlCommand("Delete from Stok where UrunID = "+ deneme, con);               
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message);
+            }
+            finally
+            {
+                MessageBox.Show("Ürün Stoklardan Başarıyla Silindi.");
+                dataGridView1.DataSource = stokGetir();            
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
