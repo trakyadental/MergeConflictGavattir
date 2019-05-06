@@ -366,7 +366,7 @@
             // urunEkle1
             // 
             this.urunEkle1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.urunEkle1.Location = new System.Drawing.Point(172, 233);
+            this.urunEkle1.Location = new System.Drawing.Point(171, 180);
             this.urunEkle1.Name = "urunEkle1";
             this.urunEkle1.Size = new System.Drawing.Size(628, 198);
             this.urunEkle1.TabIndex = 12;
