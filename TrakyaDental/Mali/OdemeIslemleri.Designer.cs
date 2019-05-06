@@ -48,7 +48,7 @@
             // 
             this.labelPlus.AutoSize = true;
             this.labelPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelPlus.Location = new System.Drawing.Point(750, 9);
+            this.labelPlus.Location = new System.Drawing.Point(725, 9);
             this.labelPlus.Name = "labelPlus";
             this.labelPlus.Size = new System.Drawing.Size(146, 24);
             this.labelPlus.TabIndex = 14;
@@ -57,7 +57,7 @@
             // pbPlus
             // 
             this.pbPlus.Image = global::TrakyaDental.Properties.Resources.plusNew;
-            this.pbPlus.Location = new System.Drawing.Point(721, 6);
+            this.pbPlus.Location = new System.Drawing.Point(696, 6);
             this.pbPlus.Name = "pbPlus";
             this.pbPlus.Size = new System.Drawing.Size(26, 31);
             this.pbPlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

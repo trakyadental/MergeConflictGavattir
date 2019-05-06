@@ -48,13 +48,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbGelirGiderIslemleri = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.personelOdemeleri1 = new TrakyaDental.PersonelOdemeleri();
             this.laboratuvarOdemeleri1 = new TrakyaDental.LaboratuvarOdemeleri();
             this.doktorOdemeleri1 = new TrakyaDental.DoktorOdemeleri();
             this.odemeIslemleri1 = new TrakyaDental.OdemeIslemleri();
             this.gelirGiderRaporu1 = new TrakyaDental.GelirGiderRaporu();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonelOdemeleri)).BeginInit();
@@ -302,14 +302,16 @@
             this.panel3.Size = new System.Drawing.Size(889, 599);
             this.panel3.TabIndex = 2;
             // 
-            // panel4
+            // pictureBox1
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(229, 46);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 599);
-            this.panel4.TabIndex = 3;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-23, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // personelOdemeleri1
             // 
@@ -346,16 +348,14 @@
             this.gelirGiderRaporu1.Size = new System.Drawing.Size(899, 599);
             this.gelirGiderRaporu1.TabIndex = 0;
             // 
-            // pictureBox1
+            // panel4
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-23, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(229, 46);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 599);
+            this.panel4.TabIndex = 3;
             // 
             // MaliIslemleri
             // 

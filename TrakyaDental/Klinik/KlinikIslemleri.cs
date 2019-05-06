@@ -54,6 +54,8 @@ namespace TrakyaDental
             personelBilgileri1.Show();
             randevuDefteri1.Hide();
             smSveEmailIslemleri1.Hide();
+            labelPlus.Show();
+            pbPlus.Show();
         }
 
         private void pbRandevuDefteri_Click(object sender, EventArgs e)
@@ -62,6 +64,8 @@ namespace TrakyaDental
             randevuDefteri1.Show();
             smSveEmailIslemleri1.Hide();
             personelBilgileri1.Hide();
+            labelPlus.Hide();
+            pbPlus.Hide();
         }
 
         private void pbSMSveEmail_Click(object sender, EventArgs e)
@@ -70,6 +74,8 @@ namespace TrakyaDental
             smSveEmailIslemleri1.Show();
             personelBilgileri1.Hide();
             randevuDefteri1.Hide();
+            labelPlus.Hide();
+            pbPlus.Hide();
         }
 
         private void KlinikIslemleri_Load(object sender, EventArgs e)
@@ -78,6 +84,8 @@ namespace TrakyaDental
             personelBilgileri1.Show();
             randevuDefteri1.Hide();
             smSveEmailIslemleri1.Hide();
+            labelPlus.Show();
+            pbPlus.Show();
 
         }
 
