@@ -31,6 +31,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pbPlus = new System.Windows.Forms.PictureBox();
             this.labelPlus = new System.Windows.Forms.Label();
+            this.IslemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PersonelID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IslemTipiID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bakiye = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlus)).BeginInit();
             this.SuspendLayout();
@@ -39,6 +43,11 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IslemID,
+            this.PersonelID,
+            this.IslemTipiID,
+            this.Bakiye});
             this.dataGridView1.Location = new System.Drawing.Point(3, 40);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(893, 556);
@@ -65,6 +74,26 @@
             this.labelPlus.TabIndex = 12;
             this.labelPlus.Text = "YENİ OLUŞTUR";
             // 
+            // IslemID
+            // 
+            this.IslemID.HeaderText = "IslemID";
+            this.IslemID.Name = "IslemID";
+            // 
+            // PersonelID
+            // 
+            this.PersonelID.HeaderText = "PersonelID";
+            this.PersonelID.Name = "PersonelID";
+            // 
+            // IslemTipiID
+            // 
+            this.IslemTipiID.HeaderText = "IslemTipiID";
+            this.IslemTipiID.Name = "IslemTipiID";
+            // 
+            // Bakiye
+            // 
+            this.Bakiye.HeaderText = "Bakiye";
+            this.Bakiye.Name = "Bakiye";
+            // 
             // DoktorOdemeleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -74,6 +103,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "DoktorOdemeleri";
             this.Size = new System.Drawing.Size(899, 599);
+            this.Load += new System.EventHandler(this.DoktorOdemeleri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlus)).EndInit();
             this.ResumeLayout(false);
@@ -86,5 +116,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pbPlus;
         private System.Windows.Forms.Label labelPlus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IslemID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PersonelID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IslemTipiID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bakiye;
     }
 }
