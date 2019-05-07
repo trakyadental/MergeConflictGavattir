@@ -13,7 +13,7 @@ namespace TrakyaDental
 {
     public partial class LaboratuvarOdemeleri : UserControl
     {
-        string connectionString = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123";
+        string connectionString = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot";
 
         public LaboratuvarOdemeleri()
         {

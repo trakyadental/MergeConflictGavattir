@@ -20,7 +20,7 @@ namespace TrakyaDental
         private DataTable PersonelOdemeleriGetir()
         {
             DataTable odemeBilgileri = new DataTable();
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123";
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot";
 
             using (SqlConnection con = new SqlConnection(connStr))
             {

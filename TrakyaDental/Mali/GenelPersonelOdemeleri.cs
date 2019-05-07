@@ -38,7 +38,7 @@ namespace TrakyaDental
         {
             doktorOdemeleriYeni1.Hide();
             int counter = 0;
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123";
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot";
             int[] doktorlar = new int[5];
 
             SqlConnection connect = new SqlConnection(connStr);
@@ -91,7 +91,7 @@ namespace TrakyaDental
             DataTable odemeBilgileri = new DataTable();
 
 
-            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123";
+            string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot";
 
 
             using (SqlConnection con = new SqlConnection(connStr))

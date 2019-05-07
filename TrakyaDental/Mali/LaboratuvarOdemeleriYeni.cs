@@ -28,7 +28,7 @@ namespace TrakyaDental.Stok
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123";
+            string connectionString = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot";
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
                 sqlCon.Open();

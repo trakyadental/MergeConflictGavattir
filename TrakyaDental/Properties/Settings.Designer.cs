@@ -26,7 +26,7 @@ namespace TrakyaDental.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=TrakyaDental;User ID=sa;Password=2362123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=TrakyaDental;User ID=sa;Password=rootroot")]
         public string connStr {
             get {
                 return ((string)(this["connStr"]));
