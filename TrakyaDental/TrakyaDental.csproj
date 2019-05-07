@@ -138,6 +138,12 @@
     <Compile Include="Mali\PersonelOdemeleri.Designer.cs">
       <DependentUpon>PersonelOdemeleri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mali\DoktorOdemeleriYeni.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mali\DoktorOdemeleriYeni.Designer.cs">
+      <DependentUpon>DoktorOdemeleriYeni.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Klinik\RandevuDefteri.cs">
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mali\PersonelOdemeleri.resx">
       <DependentUpon>PersonelOdemeleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mali\DoktorOdemeleriYeni.resx">
+      <DependentUpon>DoktorOdemeleriYeni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

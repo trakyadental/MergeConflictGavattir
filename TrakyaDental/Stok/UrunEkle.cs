@@ -13,7 +13,7 @@ namespace TrakyaDental.Stok
 {
     public partial class UrunEkle : UserControl
     {
-        string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
+        string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
         string[] sonuc = new string[20];
         int mouseX = 0, mouseY = 0;
         bool mouseDown = false;
