@@ -45,6 +45,9 @@ namespace TrakyaDental.Stok
 
         private void closeIcon_Click(object sender, EventArgs e)
         {
+            /*
+                Tablodaki verileri temizliyor, bir sonraki kayıt için daha düzenli bir ortam bırakıyor. 
+            */
             tbBarkod.Clear();
             tbBirim.Clear();
             tbBirimFiyat.Clear();
@@ -57,6 +60,10 @@ namespace TrakyaDental.Stok
 
         private void pbUrunEkle_Click(object sender, EventArgs e)
         {
+            /*
+                Yeni ürün eklemek için yeni bir sqlconnection oluştur
+                SqlCommand ile oluşturulan sqlConnection'u kullanarak yeni bir komut oluştur.
+            */
             try
             {
                 SqlConnection con = new SqlConnection(connStr);
@@ -93,8 +100,8 @@ namespace TrakyaDental.Stok
                 this.Hide();
             }
         }
-    
 
+        
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -120,7 +127,7 @@ namespace TrakyaDental.Stok
 
         private void UrunEkle_Load(object sender, EventArgs e)
         {
-                  
+            
         }
     }
 }

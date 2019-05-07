@@ -26,7 +26,7 @@ namespace TrakyaDental
             doktorOdemeleriYeni1.Hide();
             int counter = 0;
             string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot";
-            int[] doktorlar = new int[5];
+            int[] doktorlar = new int[10];
 
             SqlConnection connect = new SqlConnection(connStr);
             connect.Open();
