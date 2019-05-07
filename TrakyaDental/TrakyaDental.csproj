@@ -78,6 +78,12 @@
     <Compile Include="Hasta\HastaTedavileri.Designer.cs">
       <DependentUpon>HastaTedavileri.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mali\GenelPersonelOdemeleri.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mali\GenelPersonelOdemeleri.Designer.cs">
+      <DependentUpon>GenelPersonelOdemeleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mali\DoktorOdemeleri.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     <EmbeddedResource Include="Hasta\HastaTedavileri.resx">
       <DependentUpon>HastaTedavileri.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mali\GenelPersonelOdemeleri.resx">
+      <DependentUpon>GenelPersonelOdemeleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mali\DoktorOdemeleri.resx">
       <DependentUpon>DoktorOdemeleri.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +326,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plusNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dental png%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
