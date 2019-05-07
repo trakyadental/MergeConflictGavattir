@@ -56,17 +56,18 @@ namespace TrakyaDental
             lastLocation = e.Location;
         }
         // !-- Buraya Kadar --!//
+        
 
         // Veritabanından Select sorgularını -string dizisi döndürecek biçimde- daha kolay yazabilmek adına yazılan fonksiyonumuz.
         private string[] veritabaniDetayCek(string connectionString, string columnName, string from, string whereCol, string whereDat)
-        {
-            //DataTable stokBilgileri = new DataTable();
+        {            
             string[] sonuc = new string[20];
             int counter = 0;
             string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
 
-            using (SqlConnection con = new SqlConnection(connStr))
+            using (SqlConnection con = new SqlConnection(connStr)) // Kullanılacak olan SqlConnection açılıyor.
             {
+                // Kullanılacak olan SQL komutu yaratılıyor.
                 using (SqlCommand cmd = new SqlCommand("Select " + columnName + " from " + from + " where " + whereCol + "=" + whereDat, con))
                 {
                     con.Open();
@@ -87,8 +88,15 @@ namespace TrakyaDental
         {
             try
             {
+<<<<<<< HEAD
                 string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
 
+||||||| merged common ancestors
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+
+=======
+                string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=rootroot;";
+>>>>>>> 494b9162237cf1082bd7a3585753686bc4501e94
                 urunDetay1.urunID = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
                 urunDetay1.marka = dataGridView1.SelectedCells[1].Value.ToString();
                 urunDetay1.urunGrubu = dataGridView1.SelectedCells[2].Value.ToString();
@@ -101,7 +109,6 @@ namespace TrakyaDental
                 urunDetay1.birimFiyat = Convert.ToInt32(dataGridView1.SelectedCells[6].Value.ToString());
                 urunDetay1.skt = Convert.ToDateTime(dataGridView1.SelectedCells[7].Value);
                 urunDetay1.barkod = dataGridView1.SelectedCells[8].Value.ToString();
-
                 urunDetay1.aciklama = veritabaniDetayCek(connStr, "Grup_Aciklama", "UrunGrup", "GrupID", grup.ToString())[0];
                 urunDetay1.Update();
                 urunDetay1.Show();
@@ -117,12 +124,17 @@ namespace TrakyaDental
             urunDetay1.Hide();
             stokHareket1.Hide();
             urunEkle1.Hide();
-            //Connec
+            
             dataGridView1.DataSource = stokGetir();
         }
 
         private DataTable stokGetir()
         {
+            /*
+            Stok bilgilerini tutacak bir DataTable oluştur
+            Sql komutuyla Stok tablosundaki tüm verileri çek        
+             */
+
             DataTable stokBilgileri = new DataTable();
 
 
@@ -140,8 +152,14 @@ namespace TrakyaDental
             }
             return stokBilgileri;
         }
+
         private void pbStokHareketi_Click(object sender, EventArgs e)
         {
+            /*
+            Stok hareketini yapacak olan personeli bir sonraki form ekranında görüntülemek için
+            Personel bilgilerini çekerek bir listeye ekle,            
+            Yeni oluşturulan form'a bu listeyi at.
+            */
             try
             {
                 string connStr = "Data Source=.;Initial Catalog=TrakyaDental;User ID=sa; Password=2362123;";
@@ -175,6 +193,9 @@ namespace TrakyaDental
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            string adSoyad = "İlker Atabay";
+            string ad = adSoyad.Split(' ')[0];
+
             this.Hide();
             var anasayfa = new Form1();
             anasayfa.ShowDialog();

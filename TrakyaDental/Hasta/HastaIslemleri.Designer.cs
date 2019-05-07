@@ -45,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbHastaIslemleri = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.hastaTedavileri1 = new TrakyaDental.Hasta.HastaTedavileri();
+            this.hastaEkle1 = new TrakyaDental.Hasta.HastaEkle();
             this.btnBitir = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -67,8 +69,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.hastaTedavileri1 = new TrakyaDental.Hasta.HastaTedavileri();
-            this.hastaEkle1 = new TrakyaDental.Hasta.HastaEkle();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHastaSil)).BeginInit();
@@ -291,6 +291,22 @@
             this.panel3.Size = new System.Drawing.Size(889, 599);
             this.panel3.TabIndex = 2;
             // 
+            // hastaTedavileri1
+            // 
+            this.hastaTedavileri1.Location = new System.Drawing.Point(55, 104);
+            this.hastaTedavileri1.Name = "hastaTedavileri1";
+            this.hastaTedavileri1.Size = new System.Drawing.Size(800, 400);
+            this.hastaTedavileri1.TabIndex = 63;
+            // 
+            // hastaEkle1
+            // 
+            this.hastaEkle1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hastaEkle1.Location = new System.Drawing.Point(55, 104);
+            this.hastaEkle1.Name = "hastaEkle1";
+            this.hastaEkle1.Size = new System.Drawing.Size(800, 400);
+            this.hastaEkle1.TabIndex = 12;
+            this.hastaEkle1.Visible = false;
+            // 
             // btnBitir
             // 
             this.btnBitir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(76)))), ((int)(((byte)(157)))));
@@ -498,22 +514,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // hastaTedavileri1
-            // 
-            this.hastaTedavileri1.Location = new System.Drawing.Point(55, 104);
-            this.hastaTedavileri1.Name = "hastaTedavileri1";
-            this.hastaTedavileri1.Size = new System.Drawing.Size(800, 400);
-            this.hastaTedavileri1.TabIndex = 63;
-            // 
-            // hastaEkle1
-            // 
-            this.hastaEkle1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.hastaEkle1.Location = new System.Drawing.Point(55, 104);
-            this.hastaEkle1.Name = "hastaEkle1";
-            this.hastaEkle1.Size = new System.Drawing.Size(800, 400);
-            this.hastaEkle1.TabIndex = 12;
-            this.hastaEkle1.Visible = false;
             // 
             // HastaIslemleri
             // 
